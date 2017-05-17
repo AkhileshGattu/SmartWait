@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="CheckCredentials.js"></script>
+<title> Login Form </title>
+<body>
+
+<form ng-app="CheckLogin" ng-controller = "checkLoginController" >
+
+User Name: &nbsp &nbsp &nbsp &nbsp
+<input type="text" name="uname" ng-model="uname">
+	<br> <br>
+Password : &nbsp &nbsp &nbsp &nbsp
+<input type="password" name="password" ng-model= "password">
+	<br> <br>
+	
+<button id="submit" name = "submit" ng-click="checkCredentials(uname,password)" type="button" ng-model = "submit" > Submit </button>
+
+</form>
+</body>
+</html>
+

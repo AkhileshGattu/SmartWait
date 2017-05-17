@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="rList.js"></script>
+<title> Retrieve Data Form </title>
+<body>
+
+<form id = "getList" ng-app="getList"  >
+    First Name: &nbsp &nbsp &nbsp &nbsp
+    <input type="text" name="fname" ng-model="fname">
+	<br> <br>
+	Last Name: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="lname" ng-model="lname">
+	<br> <br>
+	Email Address: &nbsp &nbsp &nbsp
+	<input type="email" name="email" ng-model="email">
+	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+	<br> <br>
+	Phone Number: &nbsp &nbsp &nbsp
+	<input type="text" name="pno" ng-model="pno">
+	<br> <br>
+	<p> Number of persons in a table: 
+	<select ng-model="nump">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+		<option value="10">10</option>
+  
+	</select>
+</p>
+	
+	Book Time: &nbsp &nbsp &nbsp &nbsp
+	<select ng-model="Selectedtime" ng-options="x for x in time">
+	</select>
+	
+	
+	<br> <br>
+	<button id="submit" name = "submit" ng-click="insertList(fname,lname,email,pno,nump,Selectedtime)" type="button" ng-model = "submit"> Add to List </button>
+	<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</form>
+</div>
+</body>
+</html> 	 	

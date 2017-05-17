@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="Login.js"></script>
+<script src="CheckCredentials.js"></script>
+<script type="text/javascript"> 
+function register() { document.getElementById('id').style.display = 'block';
+					  document.getElementById('loginid').style.display = 'none';	}
+function customer() {document.getElementById('loginid').style.display = 'block'; 
+					 document.getElementById('id').style.display = 'none';		}
+</script>
+<title> Login Form </title>
+<body>
+
+<form action = "">
+	<input type="radio" name = "option" value = "register" onclick="register();"> Register <br>
+	<input type = "radio" name = "option" value = "customer" onclick="customer();"> Customer Login <br>
+	<br> <br>
+</form>
+
+<div id="id" class = "register" style="display:none">
+<form id = "register" ng-app="login" ng-controller = "loginController" >
+    First Name: &nbsp &nbsp &nbsp &nbsp
+    <input type="text" name="fname" ng-model="fname">
+	<br> <br>
+	Last Name: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="lname" ng-model="lname">
+	<br> <br>
+	Email Address: &nbsp &nbsp &nbsp &nbsp
+	<input type="email" name="email" ng-model="email">
+	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+	<br> <br>
+	Phone: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="pno" ng-model="pno">
+	<br> <br>
+	User Name: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="uname" ng-model="uname">
+	<br> <br>
+	Password : &nbsp &nbsp &nbsp &nbsp
+	<input type="password" name="password" ng-model= "password">
+	<br> <br>
+	<button id="submit" name = "submit" ng-click="LoginCustomer(fname,lname,email,pno,uname,password)" type="button" ng-model = "submit"> Submit </button>
+
+</form>
+</div>
+
+
+<div id = "loginid" class="login" style="display:none">
+<form ng-app="CheckLogin" ng-controller = "CheckLoginController" >
+
+User Name: &nbsp &nbsp &nbsp &nbsp
+<input type="text" name="uname" ng-model="uname">
+	<br> <br>
+Password : &nbsp &nbsp &nbsp &nbsp
+<input type="password" name="password" ng-model= "password">
+	<br> <br>
+	
+<button id="submit" name = "submit" ng-click="checkCredentials(uname,password)" type="button" ng-model = "submit"> Submit </button>
+
+</form>
+</div>
+
+</body>
+</html>
+
+

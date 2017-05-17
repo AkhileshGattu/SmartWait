@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="insert.js"></script>
+<title> Insert Data Form </title>
+<body>
+
+<form id = "register" ng-app="login" ng-controller = "loginController" >
+    First Name: &nbsp &nbsp &nbsp &nbsp
+    <input type="text" name="fname" ng-model="fname">
+	<br> <br>
+	Last Name: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="lname" ng-model="lname">
+	<br> <br>
+	Email Address: &nbsp &nbsp &nbsp &nbsp
+	<input type="email" name="email" ng-model="email">
+	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+	<br> <br>
+	Phone: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="pno" ng-model="pno">
+	<br> <br>
+	No. of persons: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="no" ng-model="nump">
+	<br> <br>
+	Book Time: &nbsp &nbsp &nbsp &nbsp
+	<input type="text" name="booktime" ng-model= "time">
+	<br> <br>
+	<button id="submit" name = "submit" ng-click="insertData(fname,lname,email,pno,nump,time)" type="button" ng-model = "submit"> Submit </button>
+
+</form>
+</div>
+
+</body>
+</html>
